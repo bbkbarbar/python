@@ -62,7 +62,14 @@ def get_cpu_speed():
 	cpu = f.read()
 	return cpu
 
-print 'Free RAM: '+str(get_ram()[1])+' ('+str(get_ram()[0])+')'
+def show_memory_info():
+	freeMemory = get_ram()[1]
+	totalMemory = get_ram()[0]
+	print 'Free RAM: '+str(freeMemory)+' ('+str(totalMemory)+')'
+
+
+#print 'Free RAM: '+str(get_ram()[1])+' ('+str(get_ram()[0])+')'
+show_memory_info()
 print 'Nr. of processes: '+str(get_process_count())
 print 'Up time: '+get_up_stats()[0]
 print 'Nr. of connections: '+str(get_connections())
