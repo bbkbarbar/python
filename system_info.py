@@ -16,7 +16,7 @@ def get_process_count():
 		s = subprocess.check_output(["ps","-e"])
 		return len(s.split("\n")) 
 	except:
-	return 0
+		return 0
 
 def get_up_stats():
 	#"Returns a tuple (uptime, 5 min load average)"
