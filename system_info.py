@@ -67,12 +67,12 @@ def show_memory_info():
     totalMemory = get_ram()[0]
     progress = ((freeMemory*30) / totalMemory)
     progress = int(progress)
-    print 'Free RAM: '+str(freeMemory)+' ('+str(totalMemory)+')'
+    print 'Free RAM: '+str(freeMemory)+'MB of '+str(totalMemory)+'MB'
     bar = ""
-    for x in xrange(progress):
-    	bar += " "
     for x in xrange(30-progress):
     	bar += "#"
+    for x in xrange(progress):
+    	bar += " "
     print "Memory: (" + bar + ")"
     
 
