@@ -43,7 +43,7 @@ def get_temperature():
     "Returns the temperature in degrees C"
     try:
         s = subprocess.check_output(["/opt/vc/bin/vcgencmd","measure_temp"])
-        return float(s.split('=')[1][:-1])
+        return float(s.split('=')[1][:-3])
     except:
         return 0
 
@@ -81,6 +81,6 @@ show_memory_info()
 print 'Nr. of processes: '+str(get_process_count())
 print 'Up time: '+get_up_stats()[0]
 print 'Nr. of connections: '+str(get_connections())
-print 'Temperature: ' +str(get_temperature())
+print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'IP-address: '+get_ipaddress()
 print 'CPU speed: '+str(get_cpu_speed())
