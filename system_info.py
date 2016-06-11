@@ -115,7 +115,7 @@ def printColor(text, color, setNormal):
 	print("\033[" + color + text)
 	if setNormal == 1:
 		printColor("","0;30;40m")
-		print("\033[0,30,40m")
+		print("\033[0,30,40m ")
 
 
 
