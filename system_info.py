@@ -109,8 +109,8 @@ def show_memory_info():
     print "Memory: " + str(100-((freeMemory*100) / totalMemory)) + "%"
     print "[" + bar + "]"
     
-#print("\033[1;32;40m Bright Green  \n")
 
+#print("\033[1;32;40m Bright Green  \n")
 def showCPUTempWithColors():
 	print 'Temperature: ' +str(get_temperature()) + "'C"
 	#print("\033[" + color + text)
