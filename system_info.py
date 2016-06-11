@@ -84,11 +84,11 @@ def show_memory_info():
 
 print ""
 print "System infos:"
-show_memory_info()
-print 'Nr. of processes: '+str(get_process_count())
-print 'Up time: '+get_up_stats()[0]
-print 'Nr. of connections: '+str(get_connections())
 print 'Temperature: ' +str(get_temperature()) + "'C"
-print 'IP-address: '+get_ipaddress()
 print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
 print 'CPU speed max: '+str(get_cpu_speed_max()) + " MHz"
+print 'Nr. of processes: '+str(get_process_count())
+show_memory_info()
+print 'IP-address: '+get_ipaddress()
+print 'Nr. of connections: '+str(get_connections())
+print 'Up time: '+get_up_stats()[0]
