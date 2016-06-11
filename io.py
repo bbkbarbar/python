@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
+from gpiozero import LED, Button
+from signal import pause
+
+led = LED(02)
 
 def msg():
 	print "This is a simple message"
 
 msg()
 
-GPIO.setmode(GPIO.BOARD)
-
-GPIO.setup(2, GPIO.OUT)
-GPIO.output(2, False)
-
+led.on
 print "output setted"
