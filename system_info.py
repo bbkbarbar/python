@@ -73,6 +73,20 @@ def getCPUuse():
     return(str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip(\
     )))
 
+# Return information about disk space as a list (unit included)                     
+# Index 0: total disk space                                                         
+# Index 1: used disk space                                                          
+# Index 2: remaining disk space                                                     
+# Index 3: percentage of disk used                                                  
+def getDiskSpace():
+    p = os.popen("df -h /")
+    i = 0
+    while 1:
+        i = i +1
+        line = p.readline()
+        if i==2:
+            return(line.split()[1:5])
+
 def show_memory_info():
     freeMemory = get_ram()[1]
     totalMemory = get_ram()[0]
@@ -92,9 +106,11 @@ print "System infos:"
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
 print 'CPU speed max: '+str(get_cpu_speed_max()) + " MHz"
-print 'CPU useage: ' + getCPUuse()
+print 'CPU useage: ' + getCPUuse() + "%"
 print 'Nr. of processes: '+str(get_process_count())
 show_memory_info()
 print 'IP-address: '+get_ipaddress()
 print 'Nr. of connections: '+str(get_connections())
 print 'Up time: '+get_up_stats()[0]
+print ""
+print getDiskSpace()
