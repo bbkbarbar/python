@@ -56,13 +56,18 @@ def get_ipaddress():
     ipaddr = split_data[split_data.index('src')+1]
     return ipaddr
 
-def get_cpu_speed():
+def get_cpu_speed_max():
     "Returns the current CPU speed"
     #f = os.popen('/opt/vc/bin/vcgencmd get_config arm_freq')
     f = os.popen('/opt/vc/bin/vcgencmd get_config core_freq')
     cpu = f.read()
     return str(cpu).split("=",)[1][:-1]
-    #return cpu
+
+def get_cpu_speed_current():
+    "Returns the current CPU speed"
+    f = os.popen('/opt/vc/bin/vcgencmd get_config arm_freq')
+    cpu = f.read()
+    return str(cpu).split("=",)[1][:-1]
 
 def show_memory_info():
     freeMemory = get_ram()[1]
@@ -86,4 +91,5 @@ print 'Up time: '+get_up_stats()[0]
 print 'Nr. of connections: '+str(get_connections())
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'IP-address: '+get_ipaddress()
-print 'CPU speed: '+str(get_cpu_speed()) + " MHz"
+print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
+print 'CPU speed max: '+str(get_cpu_speed_max()) + " MHz"
