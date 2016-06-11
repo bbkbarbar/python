@@ -117,7 +117,7 @@ def printColor(text, color):
 def printColor(text, color, setNormal):
 	printColor(text, color)
 	if setNormal == 1:
-		printColor("",0;30;40m)
+		printColor("","0;30;40m")
 
 
 
