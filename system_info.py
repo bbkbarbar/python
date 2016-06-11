@@ -87,6 +87,13 @@ def getDiskSpace():
         if i==2:
             return(line.split()[1:5])
 
+def showDiskSpace():
+	values = getDiskSpace()
+	print "Total disk space:\t" + values[0]
+	print "Used disk space:\t" + values[1]
+	print "Free disk space:\t" + values[2]
+	print "Total disk space:\t" + values[3]
+
 def show_memory_info():
     freeMemory = get_ram()[1]
     totalMemory = get_ram()[0]
