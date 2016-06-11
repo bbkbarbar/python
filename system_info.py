@@ -68,6 +68,11 @@ def get_cpu_speed_current():
     cpu = f.read()
     return str(cpu).split("=",)[1][:-1]
 
+# Return % of CPU used by user as a character string                                
+def getCPUuse():
+    return(str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip(\
+    )))
+
 def show_memory_info():
     freeMemory = get_ram()[1]
     totalMemory = get_ram()[0]
@@ -87,6 +92,7 @@ print "System infos:"
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
 print 'CPU speed max: '+str(get_cpu_speed_max()) + " MHz"
+print 'CPU useage: ' + getCPUuse()
 print 'Nr. of processes: '+str(get_process_count())
 show_memory_info()
 print 'IP-address: '+get_ipaddress()
