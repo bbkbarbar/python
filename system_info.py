@@ -65,11 +65,11 @@ def get_cpu_speed():
 def show_memory_info():
     freeMemory = get_ram()[1]
     totalMemory = get_ram()[0]
-    progress = ((freeMemory*30) / totalMemory)
+    progress = ((freeMemory*20) / totalMemory)
     progress = int(progress)
     print 'Free RAM: '+str(freeMemory)+'MB of '+str(totalMemory)+'MB'
     bar = ""
-    for x in xrange(30-progress):
+    for x in xrange(20-progress):
     	bar += "#"
     for x in xrange(progress):
     	bar += "_"
