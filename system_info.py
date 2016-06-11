@@ -70,9 +70,9 @@ def show_memory_info():
     print 'Free RAM: '+str(freeMemory)+' ('+str(totalMemory)+')'
     bar = ""
     for x in xrange(progress):
-    	bar += "#"
+    	bar += " "
     for x in xrange(30-progress):
-    	bar += "_"
+    	bar += "#"
     print "Memory: (" + bar + ")"
     
 
