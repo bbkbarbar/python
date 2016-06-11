@@ -106,7 +106,8 @@ def show_memory_info():
     	bar += "#"
     for x in xrange(progress):
     	bar += " "
-    print "Memory: [" + bar + "] (" + str(100-((freeMemory*100) / totalMemory)) + "%" + ")"
+    print "Memory: " + str(100-((freeMemory*100) / totalMemory)) + "%"
+    print "[" + bar + "]"
     
 
 print ""
