@@ -109,7 +109,12 @@ def show_memory_info():
     print "Memory: " + str(100-((freeMemory*100) / totalMemory)) + "%"
     print "[" + bar + "]"
     
-print("\033[1;32;40m Bright Green  \n")
+#print("\033[1;32;40m Bright Green  \n")
+
+def printColor(text, color):
+	print("\033[" + color + text)
+
+printColor("szoveg", "1;32;40m")
 
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
