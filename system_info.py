@@ -110,8 +110,7 @@ def show_memory_info():
     print "[" + bar + "]"
     
 
-print ""
-print "System infos:"
+print colored('hello', 'red'), colored('world', 'green')
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
 print 'CPU speed max: '+str(get_cpu_speed_max()) + " MHz"
