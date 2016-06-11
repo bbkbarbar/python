@@ -77,11 +77,12 @@ def show_memory_info():
     print "Memory: (" + bar + ") (" + str(100-((freeMemory*100) / totalMemory)) + "%" + ")"
     
 
-
+print ""
+print "System infos:"
 show_memory_info()
 print 'Nr. of processes: '+str(get_process_count())
 print 'Up time: '+get_up_stats()[0]
 print 'Nr. of connections: '+str(get_connections())
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'IP-address: '+get_ipaddress()
-print 'CPU speed: '+str(get_cpu_speed())
+print 'CPU speed: '+str(get_cpu_speed()) + " MHz"
