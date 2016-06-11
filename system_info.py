@@ -88,11 +88,12 @@ def getDiskSpace():
             return(line.split()[1:5])
 
 def showDiskSpace():
+	print "Disk space:"
 	values = getDiskSpace()
-	print "Total disk space:\t" + values[0]
-	print "Used disk space:\t" + values[1]
-	print "Free disk space:\t" + values[2]
-	print "Total disk space:\t" + values[3]
+	print "\tTotal:\t" + values[0]
+	print "\tUsed:\t" + values[1]
+	print "\tFree:\t" + values[2]
+	print "\t:\t" + values[3]
 
 def show_memory_info():
     freeMemory = get_ram()[1]
@@ -119,6 +120,4 @@ show_memory_info()
 print 'IP-address: '+get_ipaddress()
 print 'Nr. of connections: '+str(get_connections())
 print 'Up time: '+get_up_stats()[0]
-print ""
-print getDiskSpace()
-print "->" + getDiskSpace()[2]
+showDiskSpace()
