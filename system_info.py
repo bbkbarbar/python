@@ -114,7 +114,14 @@ def show_memory_info():
 def printColor(text, color):
 	print("\033[" + color + text)
 
-printColor("szoveg", "1;32;40m")
+def printColor(text, color, setNormal):
+	printColor(text, color)
+	if setNormal == 1:
+		printColor("",0;30;40m)
+
+
+
+printColor("szoveg", "1;32;40m",1)
 
 print 'Temperature: ' +str(get_temperature()) + "'C"
 print 'CPU speed core: '+str(get_cpu_speed_current()) + " MHz"
