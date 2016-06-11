@@ -114,3 +114,4 @@ print 'Nr. of connections: '+str(get_connections())
 print 'Up time: '+get_up_stats()[0]
 print ""
 print getDiskSpace()
+print "->" + getDiskSpace()[2]
