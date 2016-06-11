@@ -5,6 +5,8 @@ def msg():
 
 msg()
 
+GPIO.setmode(GPIO.BOARD)
+
 GPIO.setup(2, GPIO.OUT)
 GPIO.output(2, False)
 
