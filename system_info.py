@@ -90,10 +90,10 @@ def getDiskSpace():
 def showDiskSpace():
 	print "Disk space:"
 	values = getDiskSpace()
-	print "\tTotal:\t" + values[0]
-	print "\tUsed:\t" + values[1]
-	print "\tFree:\t" + values[2]
-	print "\t:\t" + values[3]
+	print "  Total:\t" + values[0]
+	print "  Used:\t" + values[1]
+	print "  Free:\t" + values[2]
+	print "  :\t" + values[3]
 
 def show_memory_info():
     freeMemory = get_ram()[1]
