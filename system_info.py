@@ -72,12 +72,12 @@ def show_memory_info():
     for x in xrange(30-progress):
     	bar += "#"
     for x in xrange(progress):
-    	bar += " "
+    	bar += "_"
     print "Memory: (" + bar + ")"
     
 
 
-#print 'Free RAM: '+str(get_ram()[1])+' ('+str(get_ram()[0])+')'
+print "|" + subprocess.check_output(["/opt/vc/bin/vcgencmd","measure_temp"]) + "|"
 show_memory_info()
 print 'Nr. of processes: '+str(get_process_count())
 print 'Up time: '+get_up_stats()[0]
