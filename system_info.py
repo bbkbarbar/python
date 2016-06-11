@@ -91,7 +91,7 @@ def showDiskSpace():
 	print "Disk space:"
 	values = getDiskSpace()
 	print "  Free: \t" + values[2]
-	print "  Free:\t" + values[3]
+	print "  Free: \t" + values[3]
 	print "  Used: \t" + values[1]
 	print "  Total:\t" + values[0]
 
