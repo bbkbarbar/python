@@ -1,8 +1,5 @@
 import subprocess
 import os
-from termcolor import colored
-
-print colored('hello', 'red'), colored('world', 'green')
 
 def get_ram():
     "Returns a tuple (total ram, available ram) in megabytes. See www.linuxatemyram.com"
