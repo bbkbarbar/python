@@ -3,7 +3,7 @@ import argparse
 
 
 def msg(pin, state):
-	print "Pin: " + pin + " State: " + state
+	print "Pin: " + str(pin) + " State: " + str(state)
 
 def getBool(val):
 	if val == 0:
