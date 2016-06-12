@@ -1,13 +1,30 @@
-import RPi.GPIO as GPIO
-from gpiozero import LED, Button
-from signal import pause
+import RPi.GPIO as GPIO ## Import GPIO library
 
-led = LED(02)
 
-def msg():
-	print "This is a simple message"
+def msg(pin, state):
+	print "Pin: " + pin + " State: " + state
 
-msg()
+def getBool(val):
+	if val == 0:
+		return False
+	else:
+		return True
 
-led.on
-print "output setted"
+def main():
+	parser = argparse.ArgumentParser('BackDoor client commander')
+	parser.add_argument("-s","--state", type=int, help="Wanted state of output")
+	parser.add_argument("-p","--pin", type=int, help="Output pin", default = 3)
+
+	args = parser.parse_args()
+
+	pin = args.pin
+	state = args.state
+
+	GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
+	msg(pin, state)
+
+	GPIO.setup(pin, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+	GPIO.output(pin,getBool(state)) ## Turn on GPIO pin 7
+
+if __name__ == "__main__":
+	main()
