@@ -14,16 +14,13 @@ def getBool(val):
 
 def main():
 	parser = argparse.ArgumentParser(' ')
-	parser.add_argument("-s","--state", type=int, help="Wanted state of output")
 	parser.add_argument("-p","--pin", type=int, help="Output pin", default = 3)
 
 	args = parser.parse_args()
 
 	pin = args.pin
-	value = args.state
 
 	GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
-	msg(pin, value)
 
 	GPIO.setup(pin, GPIO.PWM) 
 
