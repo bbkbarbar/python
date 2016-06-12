@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO ## Import GPIO library
 import argparse
 
+GPIO.setwarnings(False)
 
 def msg(pin, state):
 	print "Pin: " + str(pin) + " State: " + str(state)
