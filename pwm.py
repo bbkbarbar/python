@@ -29,7 +29,7 @@ def main():
 
 	p = GPIO.PWM(pin, 0.5)
 	#p = GPIO.PWM(channel, frequency)
-	p.start(value)
+	p.start(1)
 
 if __name__ == "__main__":
 	main()
