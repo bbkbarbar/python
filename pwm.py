@@ -22,7 +22,7 @@ def main():
 
 	GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
 
-	GPIO.setup(pin, GPIO.PWM) 
+	GPIO.setup(3, GPIO.PWM) 
 
 	p = GPIO.PWM(pin, 0.5)
 	#p = GPIO.PWM(channel, frequency)
