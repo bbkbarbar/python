@@ -1,14 +1,7 @@
 import socketserver
  
 class Handler_TCPServer(socketserver.BaseRequestHandler):
-    """
-    The TCP Server class for demonstration.
- 
-    Note: We need to implement the Handle method to exchange data
-    with TCP client.
- 
-    """
- 
+
     def handle(self):
         # self.request -> TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
