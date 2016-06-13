@@ -20,7 +20,7 @@ def client_serve(client):
 
 		while True:
 			#wait for data from listener
-			received_data = client.recv(4096)
+			received_data = client.recv(8)
 			handleReceivedData(received_data, client)
 
 			##wait for more input
