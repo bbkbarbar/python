@@ -39,9 +39,6 @@ def main():
 		p.start(0)
 		p.ChangeDutyCycle(value)
 
-		chRed.stop()
-		GPIO.cleanup()
-
 
 if __name__ == "__main__":
 	main()
