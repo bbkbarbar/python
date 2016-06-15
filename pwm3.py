@@ -16,6 +16,8 @@ def main():
 	value = args.value
 	freq = args.freq
 
+	GPIO.setwarnings(False)
+	
 	if channel == 0:
 		p = GPIO.PWM(channel, freq)  
 		p.stop()
