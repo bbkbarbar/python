@@ -20,7 +20,6 @@ def main():
 
 	if channel == 0:
 		p = GPIO.PWM(channel, freq)  
-		p.stop()
 		GPIO.cleanup()
 		
 	else:
@@ -29,21 +28,21 @@ def main():
 		#pinGreen = 5
 		#pinBlue = 7
 
-
-		GPIO.cleanup()
-
 		GPIO.setup(channel, GPIO.OUT)
 		#GPIO.setup(pinRed, GPIO.OUT)
 		#GPIO.setup(pinGreen, GPIO.OUT)
 		#GPIO.setup(pinBlue, GPIO.OUT)
 
 		p = GPIO.PWM(channel, freq)  # channel=pinRed frequency=50Hz
-		p.stop()
 		#chGreen = GPIO.PWM(pinGreen, 200)  # channel=pinRed frequency=50Hz
 		#chBlue = GPIO.PWM(pinBlue, 200)  # channel=pinRed frequency=50Hz
 
 		p.start(0)
 		p.ChangeDutyCycle(value)
+
+		input('Press return to stop:')   # use raw_input for Python 2
+		p.stop()
+		GPIO.cleanup()
 
 
 if __name__ == "__main__":
