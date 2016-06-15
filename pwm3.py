@@ -1,6 +1,8 @@
 import time
 import RPi.GPIO as GPIO
 
+GPIO.setmode(GPIO.BOARD)
+
 def main():
 
 	parser = argparse.ArgumentParser('3ch PWM controller')
@@ -14,11 +16,11 @@ def main():
 	freq = args.freq
 
 	if channel == 0:
-		chRed.stop()
+		p = GPIO.PWM(channel, freq)  
+		p.stop()
 		GPIO.cleanup()
 		
 	else:
-		GPIO.setmode(GPIO.BOARD)
 
 		#pinRed = 3
 		#pinGreen = 5
