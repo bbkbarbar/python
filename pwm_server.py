@@ -22,18 +22,20 @@ p = GPIO.PWM(channel, 50)
 pwmIsRunning = False
 serverIsRunning = True
 
-def setPwm(line):
-	if pwmIsRunning == True:
-		pwmIsRunning = False
+def setPwm(line, running):
+	res = False
+	if running == True:
+		res = False
 		p.stop()
 
 	if line == "stop":
-		pwmIsRunning = False
+		res = False
 		p.stop()
 	else:		
 		dc = float(line[:3])
 		p.start(dc)
-		pwmIsRunning = True
+		res = True
+	return res
 
 
 
@@ -57,7 +59,7 @@ while serverIsRunning == True:
 				else:
 					#print >>sys.stderr, 'sending data back to the client'
 					connection.sendall(data)
-					setPwm(data)
+					pwmIsRunning = setPwm(data)
 			else:
 				print >>sys.stderr, 'no more data from', client_address
 				break
