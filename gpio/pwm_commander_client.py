@@ -3,7 +3,7 @@ import sys
 import argparse
 
 parser = argparse.ArgumentParser('PWM commander client')
-parser.add_argument("-c","--channel", type=int, help="output channel", default = 3)
+parser.add_argument("-c","--channel", type=str, help="output channel", default = 3)
 parser.add_argument("-v","--value", type=str, help="pwm value (maybe in percentage)")
 args = parser.parse_args()
 
@@ -18,7 +18,7 @@ sock.connect(server_address)
 try:
     
     # Send data
-    message = args.value
+    message = args.value + " " + args.channel
     print >>sys.stderr, 'sending "%s"' % message
     sock.sendall(message)
 
