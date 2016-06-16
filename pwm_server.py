@@ -46,9 +46,9 @@ def setPwm(line, running):
 
 	if line == "stop":
 		res = False
-			p1.stop()
-			p2.stop()
-			p3.stop()
+		p1.stop()
+		p2.stop()
+		p3.stop()
 	else:		
 		dc = float(line[:3])
 		if channel == 3:
