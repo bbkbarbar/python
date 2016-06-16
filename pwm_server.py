@@ -32,7 +32,7 @@ serverIsRunning = True
 
 def setPwm(line, running):
 	res = False
-	ch = line[4:2]
+	ch = str(line[4:2])
 	print "ch: |" + ch + "|"
 	if running == True:
 		res = False
