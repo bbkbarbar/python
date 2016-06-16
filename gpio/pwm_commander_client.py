@@ -24,7 +24,10 @@ try:
     message = (args.value + " " + args.channel)
     if debug_mode:
         print >>sys.stderr, 'sending "%s"' % message
-    sock.sendall(message)
+    if args.channel == "kill":
+        sock.sendall("kill")
+    else:
+        sock.sendall(message)
 
     # Look for the response
     amount_received = 0
