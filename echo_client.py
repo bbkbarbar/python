@@ -12,7 +12,7 @@ sock.connect(server_address)
 try:
     
     # Send data
-    message = 'This is the message.  It will be repeated.'
+    message = '002'
     print >>sys.stderr, 'sending "%s"' % message
     sock.sendall(message)
 

@@ -1,6 +1,5 @@
 import socket
 import sys
-import RPi.GPIO as GPIO
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -13,31 +12,7 @@ sock.bind(server_address)
 # Listen for incoming connections
 sock.listen(1)
 
-# Pwm init
-GPIO.setmode(GPIO.BOARD)
-GPIO.setwarnings(False)
-channel = 3
-GPIO.setup(channel, GPIO.OUT)
-p = GPIO.PWM(channel, 50)
-pwmIsRunning = False
-serverIsRunning = True
-
-def setPwm(line):
-	if pwmIsRunning == True:
-		pwmIsRunning = False
-		p.stop()
-
-	if line == "stop":
-		pwmIsRunning = False
-		p.stop()
-	else:		
-		dc = float(line[:3])
-		p.start(dc)
-		pwmIsRunning = True
-
-
-
-while serverIsRunning == True:
+while True:
     # Wait for a connection
     print >>sys.stderr, 'waiting for a connection'
     connection, client_address = sock.accept()
@@ -47,17 +22,10 @@ while serverIsRunning == True:
         # Receive the data in small chunks and retransmit it
         while True:
             data = connection.recv(32)
-            #print >>sys.stderr, 'received "%s"' % data
+            print >>sys.stderr, 'received "%s"' % data
             if data:
-            	if data == "kill":
-            		p.stop()
-					GPIO.cleanup()
-					pwmIsRunning = False
-					serverIsRunning = False
-				else:
-                	#print >>sys.stderr, 'sending data back to the client'
-                	connection.sendall(data)
-                	setPwm(data)
+                print >>sys.stderr, 'sending data back to the client'
+                connection.sendall(data)
             else:
                 print >>sys.stderr, 'no more data from', client_address
                 break
