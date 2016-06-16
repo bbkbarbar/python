@@ -50,7 +50,7 @@ while serverIsRunning == True:
             #print >>sys.stderr, 'received "%s"' % data
             if data:
             	if data == "kill":
-            		p.stop()
+					p.stop()
 					GPIO.cleanup()
 					pwmIsRunning = False
 					serverIsRunning = False
