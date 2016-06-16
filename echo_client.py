@@ -2,6 +2,7 @@ import socket
 import sys
 import argparse
 
+parser = argparse.ArgumentParser('PWM commander client')
 parser.add_argument("-c","--channel", type=int, help="output channel", default = 3)
 parser.add_argument("-v","--value", type=str, help="pwm value (maybe in percentage)")
 args = parser.parse_args()
