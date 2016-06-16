@@ -33,7 +33,7 @@ def setPwm(line, running):
 		p.stop()
 	else:		
 		dc = float(line[:3])
-		print "ch: " + line[4:][:2]
+		print "ch: " + line[4:2]
 		p.start(dc)
 		res = True
 	return res
