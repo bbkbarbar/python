@@ -33,17 +33,30 @@ serverIsRunning = True
 def setPwm(line, running):
 	res = False
 	ch = str(line[4:])
-	print "ch: |" + ch + "|"
+	channel = int(ch)
+	print "ch: |" + channel + "|"
 	if running == True:
 		res = False
-		p1.stop()
+		if channel == 3:
+			p1.stop()
+		if channel == 5:
+			p2.stop()
+		if channel == 7:
+			p3.stop()
 
 	if line == "stop":
 		res = False
-		p1.stop()
+			p1.stop()
+			p2.stop()
+			p3.stop()
 	else:		
 		dc = float(line[:3])
-		p1.start(dc)
+		if channel == 3:
+			p1.start(dc)
+		if channel == 5:
+			p2.start(dc)
+		if channel == 7:
+			p3.start(dc)
 		res = True
 	return res
 
