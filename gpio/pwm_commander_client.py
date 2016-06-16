@@ -32,5 +32,5 @@ try:
         print >>sys.stderr, 'received "%s"' % data
 
 finally:
-    print >>sys.stderr, 'closing socket'
+    #print >>sys.stderr, 'closing socket'
     sock.close()

@@ -2,6 +2,10 @@ import socket
 import sys
 import RPi.GPIO as GPIO
 
+# pwm1 -> ch3
+# pwm2 -> ch5
+# pwm3 -> ch7
+
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -16,25 +20,30 @@ sock.listen(1)
 # Pwm init
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
-channel = 3
-GPIO.setup(channel, GPIO.OUT)
-p = GPIO.PWM(channel, 50)
+freq = 50
+GPIO.setup(3, GPIO.OUT)
+GPIO.setup(5, GPIO.OUT)
+GPIO.setup(7, GPIO.OUT)
+p1 = GPIO.PWM(3, freq)
+p2 = GPIO.PWM(5, freq)
+p3 = GPIO.PWM(7, freq)
 pwmIsRunning = False
 serverIsRunning = True
 
 def setPwm(line, running):
 	res = False
+	ch = line[4:2]
+	print "ch: |" + ch + "|"
 	if running == True:
 		res = False
-		p.stop()
+		p1.stop()
 
 	if line == "stop":
 		res = False
-		p.stop()
+		p1.stop()
 	else:		
 		dc = float(line[:3])
-		print "ch: " + line[4:2]
-		p.start(dc)
+		p1.start(dc)
 		res = True
 	return res
 
@@ -53,7 +62,9 @@ while serverIsRunning == True:
 			#print >>sys.stderr, 'received "%s"' % data
 			if data:
 				if data == "kill":
-					p.stop()
+					p1.stop()
+					p2.stop()
+					p3.stop()
 					GPIO.cleanup()
 					pwmIsRunning = False
 					serverIsRunning = False
