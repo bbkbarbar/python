@@ -34,7 +34,7 @@ def setPwm(line, running):
 	res = False
 	ch = str(line[4:])
 	channel = int(ch)
-	print "ch: |" + channel + "|"
+	print "ch: |" + str(channel) + "|"
 	if running == True:
 		res = False
 		if channel == 3:
