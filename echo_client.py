@@ -1,5 +1,10 @@
 import socket
 import sys
+import argparse
+
+parser.add_argument("-c","--channel", type=int, help="output channel", default = 3)
+parser.add_argument("-v","--value", type=str, help="pwm value (maybe in percentage)")
+args = parser.parse_args()
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -12,7 +17,7 @@ sock.connect(server_address)
 try:
     
     # Send data
-    message = '002'
+    message = args.value
     print >>sys.stderr, 'sending "%s"' % message
     sock.sendall(message)
 
