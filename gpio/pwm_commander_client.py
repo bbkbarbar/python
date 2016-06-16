@@ -29,15 +29,16 @@ try:
     else:
         sock.sendall(message)
 
-    # Look for the response
-    amount_received = 0
-    amount_expected = len(message)
-    
-    while amount_received < amount_expected:
-        data = sock.recv(32)
-        amount_received += len(data)
-        if debug_mode:
-            print >>sys.stderr, 'received "%s"' % data
+    if args.channel != "kill":
+        # Look for the response
+        amount_received = 0
+        amount_expected = len(message)
+        
+        while amount_received < amount_expected:
+            data = sock.recv(32)
+            amount_received += len(data)
+            if debug_mode:
+                print >>sys.stderr, 'received "%s"' % data
 
 finally:
     #print >>sys.stderr, 'closing socket'
