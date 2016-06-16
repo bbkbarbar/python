@@ -18,7 +18,7 @@ sock.connect(server_address)
 try:
     
     # Send data
-    message = args.value + " " + args.channel
+    message = (args.value + " " + args.channel)
     print >>sys.stderr, 'sending "%s"' % message
     sock.sendall(message)
 
