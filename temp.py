@@ -35,7 +35,7 @@ def write_to_file(data):
 
 while True:
 	print(str(read_temp()) + "C")
-	time = datetime.datetime.time(datetime.datetime.now())
-	print(str(time)[:8])
-	write_to_file(str(time)[:8] + "\t" + str(read_temp()))
-	time.time.sleep(1)
+	lasttime = datetime.datetime.time(datetime.datetime.now())
+	print(str(lasttime)[:8])
+	write_to_file(str(lasttime)[:8] + "\t" + str(read_temp()))
+	time.sleep(1)
