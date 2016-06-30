@@ -29,8 +29,8 @@ def read_temp():
 
 def write_to_file(data):
 	with open("temp.log", "a") as myfile:
-    	myfile.write(data + "\r\n")
-    	myfile.close()
+		myfile.write(data + "\r\n")
+		myfile.close()
 
 while True:
 	print(str(read_temp()) + "C")
