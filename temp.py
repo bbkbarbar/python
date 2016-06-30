@@ -38,4 +38,4 @@ while True:
 	time = datetime.datetime.time(datetime.datetime.now())
 	print(str(time)[:8])
 	write_to_file(str(time)[:8] + "\t" + str(read_temp()))
-	time.sleep(1)
+	time.time.sleep(1)
