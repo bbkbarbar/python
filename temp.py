@@ -28,5 +28,5 @@ def read_temp():
 		#, temp_f
 
 while True:
-	print(read_temp() + "C")
+	print(str(read_temp()) + "C")
 	time.sleep(10)
