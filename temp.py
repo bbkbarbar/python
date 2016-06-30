@@ -29,4 +29,4 @@ def read_temp():
 
 while True:
 	print(str(read_temp()) + "C")
-	time.sleep(10)
+	time.sleep(1)
