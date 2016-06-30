@@ -38,4 +38,4 @@ while True:
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
 	write_to_file(str(lasttime)[:8] + "\t" + str(read_temp()))
-	time.sleep(1)
+	time.sleep(60)
