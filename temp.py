@@ -44,7 +44,7 @@ needToRun = os.environ['TEMP_LOG_RUN']
 
 print(needToRun)
 
-while True:
+while os.environ['TEMP_LOG_RUN'] == '1':
 	print(str(read_temp()) + "C")
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
