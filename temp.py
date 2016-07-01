@@ -40,11 +40,8 @@ parser.add_argument("-t","--delay", type=int, help="output channel", default = 6
 args = parser.parse_args()
 delay_between_measures = args.delay
 
-needToRun = os.environ['TEMP_LOG_RUN']
 
-print(needToRun)
-
-while os.environ['TEMP_LOG_RUN'] == '1':
+while (os.environ['TEMP_LOG_RUN'] == 1):
 	print(str(read_temp()) + "C")
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
