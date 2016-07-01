@@ -3,6 +3,7 @@ import glob
 import time
 import datetime
 import argparse
+import os
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -30,7 +31,7 @@ def read_temp():
 		#, temp_f
 
 def write_to_file(data):
-	with open("../temp.log", "a") as myfile:
+	with open("../logs/temp.log", "a") as myfile:
 		myfile.write(data + "\r\n")
 		myfile.close()
 
@@ -38,6 +39,10 @@ parser = argparse.ArgumentParser('Temperature logger')
 parser.add_argument("-t","--delay", type=int, help="output channel", default = 60)
 args = parser.parse_args()
 delay_between_measures = args.delay
+
+needToRun = os.environ['TEMP_LOG_RUN']
+
+print(needToRun)
 
 while True:
 	print(str(read_temp()) + "C")
