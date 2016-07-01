@@ -41,7 +41,7 @@ delay_between_measures = args.delay
 
 
 while True:
-	print(str(read_temp()) + "C")
+	print(('%.3f' % read_temp()) + " C")
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
 	write_to_file(str(lasttime)[:8] + "\t" + ('%.3f' % read_temp()))
