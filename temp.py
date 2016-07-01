@@ -29,13 +29,18 @@ def read_temp():
 		#, temp_f
 
 def write_to_file(data):
-	with open("temp.log", "a") as myfile:
+	with open("../temp.log", "a") as myfile:
 		myfile.write(data + "\r\n")
 		myfile.close()
+
+parser = argparse.ArgumentParser('Temperature logger')
+parser.add_argument("-t","--delay", type=int, help="output channel", default = 60)
+args = parser.parse_args()
+delay_between_measures = args.delay
 
 while True:
 	print(str(read_temp()) + "C")
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
 	write_to_file(str(lasttime)[:8] + "\t" + str(read_temp()))
-	time.sleep(60)
+	time.sleep(delay_between_measures)
