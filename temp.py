@@ -3,7 +3,6 @@ import glob
 import time
 import datetime
 import argparse
-import os
 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -45,5 +44,5 @@ while True:
 	print(str(read_temp()) + "C")
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
-	write_to_file(str(lasttime)[:8] + "\t" + str(read_temp()))
+	write_to_file(str(lasttime)[:8] + "\t" + ('%.3f' % read_temp()))
 	time.sleep(delay_between_measures)
