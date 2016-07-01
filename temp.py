@@ -41,7 +41,7 @@ args = parser.parse_args()
 delay_between_measures = args.delay
 
 
-while (os.environ['TEMP_LOG_RUN'] == 1):
+while True:
 	print(str(read_temp()) + "C")
 	lasttime = datetime.datetime.time(datetime.datetime.now())
 	print(str(lasttime)[:8])
