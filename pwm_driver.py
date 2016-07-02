@@ -36,7 +36,7 @@ def set_servo_pulse(channel, pulse):
     pwm.set_pwm(channel, 0, pulse)
 
 # Set frequency to 60hz, good for servos.
-pwm.set_pwm_freq(60)
+pwm.set_pwm_freq(600)
 
 parser = argparse.ArgumentParser('Temperature reader')
 parser.add_argument("-v","--val", type=int, help="pwm value", default = 600)
