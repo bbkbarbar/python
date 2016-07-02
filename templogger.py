@@ -30,6 +30,7 @@ def read_temp():
 		#, temp_f
 
 def write_to_file(data):
+	homePath = os.environ["HOME"]
 	with open(homePath + "/logs/temp.log", "a") as myfile:
 		myfile.write(data + "\r\n")
 		myfile.close()
