@@ -25,7 +25,7 @@ parser.add_argument("-h", "--hex", type=str, help="RGB color in hex string", def
 args = parser.parse_args()
 
 hexStr = args.hex
-if hexStr[1] = "x":
+if hexStr[1] == "x":
 	print "got a hex color"
 # Store values for each color-channel
 red   = args.red
