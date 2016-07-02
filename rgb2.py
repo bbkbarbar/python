@@ -21,8 +21,12 @@ parser = argparse.ArgumentParser('RGB test')
 parser.add_argument("-r","--red", type=int, help="red", default = 0)
 parser.add_argument("-g","--green", type=int, help="green", default = 0)
 parser.add_argument("-b","--blue", type=int, help="blue", default = 0)
+parser.add_argument("-h", "--hex", type=str, help="RGB color in hex string", default = "  ")
 args = parser.parse_args()
 
+hexStr = args.hex
+if hexStr[1] = "x":
+	print "got a hex color"
 # Store values for each color-channel
 red   = args.red
 green = args.green
