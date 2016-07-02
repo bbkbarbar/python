@@ -48,6 +48,5 @@ channel = args.channel
 print("Value: " + str(value))
 print('Moving servo on channel 0, press Ctrl-C to quit...')
 
-while True:
-    pwm.set_pwm(channel, 0, value)
+pwm.set_pwm(channel, 0, value)
     
