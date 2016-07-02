@@ -39,13 +39,15 @@ def set_servo_pulse(channel, pulse):
 pwm.set_pwm_freq(60)
 
 parser = argparse.ArgumentParser('Temperature reader')
-parser.add_argument("-v","--val", type=int, help="temperature sensor channel", default = 600)
+parser.add_argument("-v","--val", type=int, help="pwm value", default = 600)
+parser.add_argument("-c","--channel", type=int, help="channel", default = 0)
 args = parser.parse_args()
-value = args.val
+value   = args.val
+channel = args.channel
 
 print("Value: " + str(value))
 print('Moving servo on channel 0, press Ctrl-C to quit...')
 
 while True:
-    pwm.set_pwm(0, 0, value)
+    pwm.set_pwm(channel, 0, value)
     
