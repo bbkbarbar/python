@@ -22,10 +22,10 @@ parser.add_argument("-r","--red", type=int, help="red", default = 0)
 parser.add_argument("-g","--green", type=int, help="green", default = 0)
 parser.add_argument("-b","--blue", type=int, help="blue", default = 0)
 parser.add_argument("-x", "--hex", type=str, help="RGB color in hex string", default = "  ")
-parser.add_argument("-a", "--all", type=str, help="all color component in one", default = "  ")
+parser.add_argument("-c", "--complete", type=str, help="all color component in one", default = "  ")
 args = parser.parse_args()
 
-allComponent = args.all
+allComponent = args.complete
 
 #hexStr = args.hex
 #if hexStr[1] == "x":
