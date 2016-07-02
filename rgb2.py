@@ -26,7 +26,11 @@ args = parser.parse_args()
 
 hexStr = args.hex
 if hexStr[1] == "x":
-	print "got a hex color"
+	print "got a hex color: " + hexStr
+	data = hexStr[2:]
+	print "Data: |" + data + "|"
+	#int("0xdeadbeef", 0)
+
 # Store values for each color-channel
 red   = args.red
 green = args.green
