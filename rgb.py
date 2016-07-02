@@ -47,7 +47,6 @@ red   = args.red
 green = args.green
 blue  = args.blue
 
-print("Value: " + str(value))
 print('Moving servo on channel 0, press Ctrl-C to quit...')
 
 #pwm.set_pwm(channel, 0, value)
