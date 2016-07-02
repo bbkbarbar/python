@@ -22,23 +22,26 @@ parser.add_argument("-r","--red", type=int, help="red", default = 0)
 parser.add_argument("-g","--green", type=int, help="green", default = 0)
 parser.add_argument("-b","--blue", type=int, help="blue", default = 0)
 parser.add_argument("-x", "--hex", type=str, help="RGB color in hex string", default = "  ")
+parser.add_argument("-a", "--all", type=str, help="all color component in one", default = "  ")
 args = parser.parse_args()
 
-hexStr = args.hex
-if hexStr[1] == "x":
-	print "got a hex color: " + hexStr
-	data = hexStr[2:]
-	print "Data: |" + data + "|"
-	red   = int(("0x"+hexStr[2:4]), 0)
-	green = int(("0x"+hexStr[4:6]), 0)
-	blue  = int(("0x"+hexStr[6:8]), 0)
-	print "red: " + red + " green: " + green + " blue: " + blue
-	#int("0xdeadbeef", 0)
+allComponent = args.all
+
+#hexStr = args.hex
+#if hexStr[1] == "x":
+#	print "got a hex color: " + hexStr
+#	data = hexStr[2:]
+#	print "Data: |" + data + "|"
 
 # Store values for each color-channel
-red   = args.red
-green = args.green
-blue  = args.blue
+if allComponent[0] == "a":
+	red   = int(allComponent[1:4])
+	green = int(allComponent[5:8])
+	blue  = int(allComponent[8:10])
+else:
+	red   = args.red
+	green = args.green
+	blue  = args.blue
 
 # Set PWM outputs
 pwm.set_pwm(0, 0, red)
