@@ -29,9 +29,9 @@ if hexStr[1] == "x":
 	print "got a hex color: " + hexStr
 	data = hexStr[2:]
 	print "Data: |" + data + "|"
-	red   = int(hexStr[2:4], 0)
-	green = int(hexStr[4:6], 0)
-	blue  = int(hexStr[6:8], 0)
+	red   = int("0x"+hexStr[2:4], 0)
+	green = int("0x"+hexStr[4:6], 0)
+	blue  = int("0x"+hexStr[6:8], 0)
 	print "red: " + red + " green: " + green + " blue: " + blue
 	#int("0xdeadbeef", 0)
 
