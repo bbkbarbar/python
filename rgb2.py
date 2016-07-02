@@ -35,9 +35,9 @@ allComponent = args.complete
 
 # Store values for each color-channel
 if allComponent[0] == "a":
-	red   = int(allComponent[1:4])
-	green = int(allComponent[5:8])
-	blue  = int(allComponent[8:10])
+	red   = int(allComponent[1:4])  * 16
+	green = int(allComponent[5:8])  * 16
+	blue  = int(allComponent[8:10]) * 16
 else:
 	red   = args.red
 	green = args.green
