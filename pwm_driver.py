@@ -4,6 +4,7 @@
 # License: Public Domain
 from __future__ import division
 import time
+import argparse
 
 # Import the PCA9685 module.
 import Adafruit_PCA9685
@@ -37,8 +38,14 @@ def set_servo_pulse(channel, pulse):
 # Set frequency to 60hz, good for servos.
 pwm.set_pwm_freq(60)
 
+parser = argparse.ArgumentParser('Temperature reader')
+parser.add_argument("-v","--val", type=int, help="temperature sensor channel", default = 600)
+args = parser.parse_args()
+value = args.val
+
+print("Value: " + str(value))
 print('Moving servo on channel 0, press Ctrl-C to quit...')
 
-for x in range(1023, 0):
-    pwm.set_pwm(0, x, 1023-x)
-    print("X: " + str(x))
+while True:
+    pwm.set_pwm(0, 0, value)
+    
