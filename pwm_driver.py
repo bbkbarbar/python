@@ -41,4 +41,4 @@ print('Moving servo on channel 0, press Ctrl-C to quit...')
 
 for x in range(4095, 0):
     pwm.set_pwm(0, 0, 4095-x)
-    time.sleep(0.05)
+    print("X: " + str(x))
