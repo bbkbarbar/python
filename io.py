@@ -13,7 +13,7 @@ def getBool(val):
 		return True
 
 def main():
-	parser = argparse.ArgumentParser('BackDoor client commander')
+	parser = argparse.ArgumentParser('GPIO output controller')
 	parser.add_argument("-s","--state", type=int, help="Wanted state of output")
 	parser.add_argument("-p","--pin", type=int, help="Output pin", default = 3)
 
