@@ -35,6 +35,9 @@ parser.add_argument("-g","--green", type=int, help="green", default = 0)
 parser.add_argument("-b","--blue", type=int, help="blue", default = 0)
 parser.add_argument("-x", "--hex", type=str, help="RGB color in hex string", default = "  ")
 parser.add_argument("-c", "--complete", type=str, help="all color component in one", default = "  ")
+
+parser.add_argument("-ch3","--ch3", type=int, help="channel_3", default = -1)
+
 args = parser.parse_args()
 
 allComponent = args.complete
@@ -57,11 +60,14 @@ else:
 	red   = args.red
 	green = args.green
 	blue  = args.blue
+	ch3_val = args.ch3
 
 # Set PWM outputs
 pwm.set_pwm(outout_channel_of_red,   0, red)
 pwm.set_pwm(outout_channel_of_green, 0, green)
 pwm.set_pwm(outout_channel_of_blue,  0, blue)
+if ch3_val >= 0:
+	pwm.set_pwm(3,  0, ch3_val)
 #pwm.set_pwm(channel, 0, value)
 
 # Write log
