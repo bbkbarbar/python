@@ -38,6 +38,21 @@ parser.add_argument("-c", "--complete", type=str, help="all color component in o
 
 parser.add_argument("-ch3","--ch3", type=int, help="channel_3", default = -1)
 
+parser.add_argument("-ch4","--ch4", type=int, help="channel_4", default = -1)
+parser.add_argument("-ch5","--ch5", type=int, help="channel_5", default = -1)
+parser.add_argument("-ch6","--ch6", type=int, help="channel_6", default = -1)
+parser.add_argument("-ch7","--ch7", type=int, help="channel_7", default = -1)
+
+parser.add_argument("-ch8","--ch8", type=int, help="channel_8", default = -1)
+parser.add_argument("-ch9","--ch9", type=int, help="channel_9", default = -1)
+parser.add_argument("-ch10","--ch10", type=int, help="channel_10", default = -1)
+parser.add_argument("-ch11","--ch11", type=int, help="channel_11", default = -1)
+
+parser.add_argument("-ch12","--ch12", type=int, help="channel_12", default = -1)
+parser.add_argument("-ch13","--ch13", type=int, help="channel_13", default = -1)
+parser.add_argument("-ch14","--ch14", type=int, help="channel_14", default = -1)
+parser.add_argument("-ch15","--ch15", type=int, help="channel_15", default = -1)
+
 args = parser.parse_args()
 
 allComponent = args.complete
