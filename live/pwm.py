@@ -77,12 +77,56 @@ else:
 	blue  = args.blue
 	ch3_val = args.ch3
 
+	ch3_val = args.ch3
+
+	ch4_val = args.ch4
+	ch5_val = args.ch5
+	ch6_val = args.ch6
+	ch7_val = args.ch7
+
+	ch8_val = args.ch8
+	ch9_val = args.ch9
+	ch10_val = args.ch10
+	ch11_val = args.ch11
+
+	ch12_val = args.ch12
+	ch13_val = args.ch13
+	ch14_val = args.ch14
+	ch15_val = args.ch15
+
 # Set PWM outputs
 pwm.set_pwm(outout_channel_of_red,   0, red)
 pwm.set_pwm(outout_channel_of_green, 0, green)
 pwm.set_pwm(outout_channel_of_blue,  0, blue)
 if ch3_val >= 0:
 	pwm.set_pwm(3,  0, ch3_val)
+if ch4_val >= 0:
+	pwm.set_pwm(4,  0, ch4_val)
+if ch5_val >= 0:
+	pwm.set_pwm(5,  0, ch5_val)
+if ch6_val >= 0:
+	pwm.set_pwm(6,  0, ch6_val)
+if ch7_val >= 0:
+	pwm.set_pwm(7,  0, ch7_val)
+
+if ch8_val >= 0:
+	pwm.set_pwm(8,  0, ch8_val)
+if ch9_val >= 0:
+	pwm.set_pwm(9,  0, ch9_val)
+if ch10_val >= 0:
+	pwm.set_pwm(10,  0, ch10_val)
+if ch11_val >= 0:
+	pwm.set_pwm(11,  0, ch11_val)
+
+if ch12_val >= 0:
+	pwm.set_pwm(12,  0, ch12_val)
+if ch13_val >= 0:
+	pwm.set_pwm(13,  0, ch13_val)
+if ch14_val >= 0:
+	pwm.set_pwm(14,  0, ch14_val)
+if ch15_val >= 0:
+	pwm.set_pwm(15,  0, ch15_val)
+
 #pwm.set_pwm(channel, 0, value)
 
 # Write log
