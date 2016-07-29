@@ -98,6 +98,9 @@ else:
 pwm.set_pwm(outout_channel_of_red,   0, red)
 pwm.set_pwm(outout_channel_of_green, 0, green)
 pwm.set_pwm(outout_channel_of_blue,  0, blue)
+if ch8_val >= 0:
+	pwm.set_pwm(8,  0, ch8_val)
+	
 if ch3_val >= 0:
 	pwm.set_pwm(3,  0, ch3_val)
 if ch4_val >= 0:
