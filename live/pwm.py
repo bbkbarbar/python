@@ -26,7 +26,7 @@ def write_to_file(data):
 pwm = Adafruit_PCA9685.PCA9685()
 
 # Set frequency to 60hz, good for servos.
-pwm.set_pwm_freq(60)
+pwm.set_pwm_freq(1500)
 
 # Parse arguments
 parser = argparse.ArgumentParser('RGB test')
