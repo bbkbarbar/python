@@ -10,12 +10,7 @@ def get_temperature():
     except:
         return 0
 
-    
+def showCPUTemp():
+	print 'CPU temp: ' +str(get_temperature()) + ' C'
 
-#print("\033[1;32;40m Bright Green  \n")
-def showCPUTempWithColors():
-	print 'Temperature: |' +str(get_temperature()) + "|'C"
-	#print("\033[" + color + text)
-
-
-showCPUTempWithColors()
+showCPUTemp()
