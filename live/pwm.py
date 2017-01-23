@@ -5,8 +5,8 @@ import os
 import datetime
 
 # Constants
-outout_channel_of_red   = 0
-outout_channel_of_green = 1
+outout_channel_of_red   = 1
+outout_channel_of_green = 0
 outout_channel_of_blue  = 2
 
 # Import the PCA9685 module.
@@ -26,7 +26,7 @@ def write_to_file(data):
 pwm = Adafruit_PCA9685.PCA9685()
 
 # Set frequency to 60hz, good for servos.
-pwm.set_pwm_freq(1500)
+pwm.set_pwm_freq(600)
 
 # Parse arguments
 parser = argparse.ArgumentParser('RGB test')
